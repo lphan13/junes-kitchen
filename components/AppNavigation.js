@@ -1,6 +1,6 @@
 import { NavigationContainer } from "@react-navigation/native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-import Icon from 'react-native-vector-icons/Ionicons';
+import Icon from "react-native-vector-icons/Ionicons";
 import { StyleSheet } from "react-native";
 
 import Recipes from "../screens/Recipes";
@@ -10,7 +10,7 @@ import Colors from "../constants/colors";
 
 const Tab = createBottomTabNavigator();
 
-function NavBottom() {
+function AppNavigation() {
   return (
     <NavigationContainer>
       <Tab.Navigator
@@ -30,13 +30,19 @@ function NavBottom() {
           },
         }}
       >
-      <Tab.Screen
+        <Tab.Screen
           name="Plan"
           component={MealPlanning}
           options={{
             tabBarIcon: ({ focused }) => {
               let iconName = focused ? "calendar" : "calendar-outline";
-              return <Icon name={iconName} style={styles.iconStyle} />;
+              return (
+                <Icon
+                  name={iconName}
+                  style={styles.iconStyle}
+                  color={focused ? Colors.accentDark : "gray"}
+                />
+              );
             },
           }}
         />
@@ -46,7 +52,13 @@ function NavBottom() {
           options={{
             tabBarIcon: ({ focused }) => {
               let iconName = focused ? "add-circle" : "add-circle-outline";
-              return <Icon name={iconName} style={styles.iconStyle} />;
+              return (
+                <Icon
+                  name={iconName}
+                  style={styles.iconStyle}
+                  color={focused ? Colors.accentDark : "gray"}
+                />
+              );
             },
           }}
         />
@@ -56,7 +68,13 @@ function NavBottom() {
           options={{
             tabBarIcon: ({ focused }) => {
               let iconName = focused ? "pizza" : "pizza-outline";
-              return <Icon name={iconName} style={styles.iconStyle} />;
+              return (
+                <Icon
+                  name={iconName}
+                  style={styles.iconStyle}
+                  color={focused ? Colors.accentDark : "gray"}
+                />
+              );
             },
           }}
         />
@@ -65,7 +83,7 @@ function NavBottom() {
   );
 }
 
-export default NavBottom;
+export default AppNavigation;
 
 const styles = StyleSheet.create({
   shadow: {
@@ -80,5 +98,5 @@ const styles = StyleSheet.create({
   },
   iconStyle: {
     fontSize: 32,
-  }
+  },
 });

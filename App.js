@@ -1,7 +1,7 @@
-import NavBottom from './components/NavBottom';
+import AppNavigation from './components/AppNavigation';
 
 export default function App() {
   return (
-    <NavBottom/>
+    <AppNavigation/>
   );
 }
