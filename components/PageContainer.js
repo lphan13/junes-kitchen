@@ -1,11 +1,17 @@
-import { View, Text, Image, StyleSheet } from "react-native";
+import { View } from "react-native";
+
+import Header from "./Header";
 
 function PageContainer(props) {
   return (
-    <View style={props.style}>
-        <Text>
-            This is the entire screen container!
-        </Text>
+    <View
+      style={{
+        flex: 1,
+        ...props.style,
+      }}
+    >
+      <Header>{props.headerText}</Header>
+      {props.children}
     </View>
   );
 }

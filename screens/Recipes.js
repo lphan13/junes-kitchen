@@ -6,10 +6,8 @@ import PageContainer from "../components/PageContainer";
 
 function Recipes() {
   return (
-    <PageContainer
-      style={styles.container}
-    >
-      <RecipeCard />
+    <PageContainer headerText="recipes" style={styles.pageContainer}>
+      <RecipeCard backgroundColor={Colors.primary300}/>
     </PageContainer>
   );
 }
@@ -17,10 +15,8 @@ function Recipes() {
 export default Recipes;
 
 const styles = StyleSheet.create({
-  container: {
-    backgroundColor: Colors.primary300,
+  pageContainer: {
+    backgroundColor: Colors.primary250,
     flex: 1,
-    justifyContent: "center",
-    alignItems: "center",
   },
 });

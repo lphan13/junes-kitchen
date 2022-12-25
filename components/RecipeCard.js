@@ -1,10 +1,18 @@
-import { View, Text, Image, StyleSheet } from "react-native";
-import PageContainer from "./PageContainer";
+import { View, Text, StyleSheet } from "react-native";
 
-function RecipeCard() {
+function RecipeCard(props) {
   return (
-    <View>
-        <Text>This is a recipe card</Text>
+    <View
+      style={{
+        flex: 1,
+        borderBottomLeftRadius: props.allRounded ? 35 : 0,
+        borderBottomRightRadius: props.allRounded ? 35: 0,
+        borderTopLeftRadius: 35,
+        borderTopRightRadius: 35,
+        backgroundColor: props.backgroundColor
+      }}
+    >
+      <Text style={styles.text}>smth here</Text>
     </View>
   );
 }
@@ -12,7 +20,7 @@ function RecipeCard() {
 export default RecipeCard;
 
 const styles = StyleSheet.create({
-  container: {
-    backgroundColor: 'tomato'
+  text: {
+    margin: 15,
   },
 });
